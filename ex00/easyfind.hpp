@@ -3,6 +3,7 @@
 
 #include <iostream> 
 #include <vector>
+#include <algorithm>
 
 template<typename T>
 void asdasd(T& a)
