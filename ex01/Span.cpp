@@ -45,7 +45,7 @@ std::ostream& operator<<(std::ostream& os, const Span& sp)
 	os << "{";
 	for (std::vector<int>::const_iterator it = sp.getVec().begin(); it != sp.getVec().end(); it++)
 	{
-		std::cout << *it;
+		os << *it;
 		if (std::next(it) != sp.getVec().end())
 			os << ", ";
 	}
@@ -70,9 +70,9 @@ int Span::shortestSpan() const
 	for (std::vector<int>::iterator it = temp.begin(); it != temp.end() - 1; it++)
 	{
 		int calc = *std::next(it) - *it;
-		if (std::next(it) == temp.end())
-			return result;
-		std::cout << "it:" << *it << " next:" << *std::next(it) << " calc:" << calc << " result:" << result << std::endl;
+		// if (std::next(it) == temp.end())
+		// 	return result;
+		// std::cout << "it:" << *it << " next:" << *std::next(it) << " calc:" << calc << " result:" << result << std::endl;
 		if (calc == 0)
 			return 0;
 		if (calc < result)
@@ -90,4 +90,15 @@ int Span::longestSpan() const
 	int maximum = *std::max_element(_vec.begin(), _vec.end());
 
 	return maximum - minimum; 
+}
+
+//easy fill for a range
+void fillRange(int start, int end)
+{
+	std::vector<int> temp;
+
+	std::cout << "Filling up a vector<int>" << std::endl;
+	for (int i = start; i < end; ++i)
+		temp.push_back(i);
+	// addNumbers(temp.begin(), temp.end());
 }
