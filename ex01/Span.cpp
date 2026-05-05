@@ -92,13 +92,13 @@ int Span::longestSpan() const
 	return maximum - minimum; 
 }
 
-//easy fill for a range
-void fillRange(int start, int end)
-{
-	std::vector<int> temp;
+// //easy fill for a range
+// void fillRange(int start, int end)
+// {
+// 	std::vector<int> temp;
 
-	std::cout << "Filling up a vector<int>" << std::endl;
-	for (int i = start; i < end; ++i)
-		temp.push_back(i);
-	// addNumbers(temp.begin(), temp.end());
-}
+// 	std::cout << "Filling up a vector<int>" << std::endl;
+// 	for (int i = start; i < end; ++i)
+// 		temp.push_back(i);
+// 	// addNumbers(temp.begin(), temp.end());
+// }

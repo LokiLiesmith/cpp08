@@ -25,24 +25,25 @@ class Span
 	template<typename Iterator>
 	void addNumbers(Iterator start, Iterator end)
 	{
-	size_t count = std::distance(start, end);
+		size_t count = std::distance(start, end);
 
-	if(_vec.size() + count > _max_size)
-		throw std::out_of_range("Too many elements");
-	_vec.insert(_vec.end(), start, end);
+		if(_vec.size() + count > _max_size)
+			throw std::out_of_range("Too many elements");
+		_vec.insert(_vec.end(), start, end);
 	}
 
 };
-
 std::ostream& operator<<(std::ostream& os, const Span& sp);
 
 template<typename T>
-void fillRange(int start, int end)
+void fillRange(T& con, int start, int end)
 {
-	std::cout << "Filling up a container" << std::endl;
-	for(int i = start; i < end; i++)
-		
-}
+	// typename T::iterator it = con.begin();
 
+	for(int i = start; i <= end; i++)
+	{
+		con.push_back(i);
+	}
+}
 
 #endif

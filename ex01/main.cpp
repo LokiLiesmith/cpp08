@@ -76,14 +76,36 @@ int main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	Span rangeFill = Span(10000);
+	Span rangeFill = Span(100);
 	try
 	{
-		
-		rangeFill.addNumbers(100, 10100);
+		std::vector<int> asd;
+		fillRange(asd, 1, 100);		
+		std::cout << rangeFill << std::endl;
+		rangeFill.addNumbers(asd.begin(), asd.end());
 		std::cout << rangeFill << std::endl;
 		std::cout << "rangeFill.longestSpan():" << rangeFill.longestSpan() << std::endl;
 		std::cout << "rangeFill.shortestSpan():" << rangeFill.shortestSpan() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	
+	Span justSomeNums = Span(100);
+	try
+	{
+		std::vector<int> asd;
+		asd.push_back(1);		
+		asd.push_back(22);		
+		asd.push_back(191818);		
+		asd.push_back(1213);		
+		asd.push_back(-222);		
+		std::cout << justSomeNums << std::endl;
+		justSomeNums.addNumbers(asd.begin(), asd.end());
+		std::cout << justSomeNums << std::endl;
+		std::cout << "justSomeNums.longestSpan():" << justSomeNums.longestSpan() << std::endl;
+		std::cout << "justSomeNums.shortestSpan():" << justSomeNums.shortestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -94,12 +116,12 @@ int main(void)
 	try
 	{
 		std::list<int> lst;
-		lst.addNumbers(50, 100);
+		fillRange(lst, 50, 99);
 
 		listFill.addNumbers(lst.begin(), lst.end());
-		std::cout << rangeFill << std::endl;
-		std::cout << "rangeFill.longestSpan():" << rangeFill.longestSpan() << std::endl;
-		std::cout << "rangeFill.shortestSpan():" << rangeFill.shortestSpan() << std::endl;
+		std::cout << listFill << std::endl;
+		std::cout << "listFill.longestSpan():" << listFill.longestSpan() << std::endl;
+		std::cout << "listFill.shortestSpan():" << listFill.shortestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
